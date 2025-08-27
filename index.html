@@ -1,179 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RedBox — Gift Card Offers</title>
-  <meta name="description" content="Claim premium Amazon, iTunes, Google Play and other gift card offers. 40 curated deals with smooth animations and verification modal." />
-  <meta name="theme-color" content="#FFD700"/>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedBox - Gift Cards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{--yellow:#FFD700;--card-bg:rgba(255,255,255,0.06);--glass:rgba(255,255,255,0.05);--maxw:1200px;}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',sans-serif;color:#fff;line-height:1.4;background:#000 url("https://images.unsplash.com/photo-1607082349566-18734291352d?auto=format&fit=crop&w=1950&q=80") center/cover fixed;}
-    body::before{content:"";position:fixed;inset:0;z-index:0;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.9));}
-    .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:20px}
-    .nav{position:sticky;top:16px;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:14px}
-    .brand{display:flex;align-items:center;gap:10px}.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),#ffb84d);display:grid;place-items:center;color:#000;font-weight:900}
-    .brand .name{font-weight:800;color:var(--yellow)}.menu{display:flex;gap:14px;list-style:none}
-    .menu a{color:#fff;text-decoration:none;font-weight:600;position:relative;padding:6px 8px}
-    .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--yellow);transform:scaleX(0);transition:.25s}
-    .menu a:hover::after{transform:scaleX(1)}
-    .actions a{border-radius:12px;padding:8px 12px;font-weight:800;text-decoration:none}
-    .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.2)}
-    .btn-primary{background:var(--yellow);color:#000}
-    .hero{text-align:center;margin:30px 0}.hero h1{color:var(--yellow);font-size:32px;margin-bottom:10px}
-    .hero .lead{color:#ddd;max-width:800px;margin:0 auto}
-    .pill{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:999px;background:rgba(255,215,0,.15);color:var(--yellow)}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}
-    .chip{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer}
-    .chip.active,.chip:hover{background:linear-gradient(135deg,var(--yellow),#ffb84d);color:#000}
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:20px 0 40px}
-    .card{background:var(--card-bg);border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.6);opacity:0;transform:translateY(30px);transition:.5s}
-    .card.visible{opacity:1;transform:translateY(0)}
-    .media{height:180px;overflow:hidden}
-    .media img{width:100%;height:100%;object-fit:cover;transition:.5s}
-    .card:hover .media img{transform:scale(1.1)}
-    .body{padding:14px;text-align:center}.body h3{color:var(--yellow);font-size:18px;margin-bottom:6px}
-    .pill-sm{padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:var(--yellow);color:#000;font-weight:800;text-decoration:none;margin-top:10px}
-    .badge{position:absolute;top:10px;left:10px;background:#ff4d4d;color:#fff;padding:5px 10px;font-size:12px;border-radius:8px}
-    footer{text-align:center;color:#aaa;font-size:13px;margin:20px 0}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;justify-content:center;align-items:center;z-index:99}
-    .panel{background:#111;padding:20px;border-radius:14px;max-width:400px;text-align:center}
-    .panel h3{color:var(--yellow);margin-bottom:8px}
-    .close{position:absolute;top:16px;right:20px;color:#fff;background:none;border:none;font-size:20px;cursor:pointer}
+    body {margin:0; font-family: Arial, sans-serif; background:#111; color:#fff;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:15px; background:#000;}
+    header h1 {color:#FFD700;}
+    nav a {color:#fff; margin:0 10px; text-decoration:none;}
+    nav a:hover {color:#FFD700;}
+    .hero {text-align:center; padding:50px 20px;}
+    .hero h2 {font-size:2em; margin-bottom:10px;}
+    .timer {margin:20px auto; background:#222; display:inline-block; padding:10px 20px; border-radius:20px;}
+    .cta {background:#FFD700; color:#000; text-align:center; padding:20px; border-radius:12px; margin:30px auto; width:80%;}
+    .cta button {background:#000; color:#FFD700; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;}
+    .filters {text-align:center; margin:20px 0;}
+    .filters button {background:#222; color:#fff; border:none; margin:5px; padding:10px 15px; border-radius:20px; cursor:pointer;}
+    .filters .active {background:#FFD700; color:#000;}
+    .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:20px;}
+    .card {background:#1a1a1a; border-radius:12px; padding:15px; text-align:center; box-shadow:0 0 10px rgba(0,0,0,0.5);}
+    .card img {width:100%; border-radius:8px; height:120px; object-fit:cover;}
+    .card h3 {margin:10px 0;}
+    .card button {background:#FFD700; color:#000; border:none; padding:10px 15px; border-radius:8px; cursor:pointer; font-weight:bold;}
+    footer {text-align:center; padding:20px; background:#000; margin-top:20px;}
+    /* Modal */
+    .modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;}
+    .modal-content {background:#1a1a1a; padding:20px; border-radius:12px; text-align:center; width:300px;}
+    .modal button, .modal a {background:#FFD700; color:#000; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; text-decoration:none; display:inline-block;}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav">
-      <div class="brand"><div class="logo">RB</div><div class="name">RedBox</div></div>
-      <ul class="menu">
-        <li><a href="#home">Home</a></li><li><a href="#offers">Offers</a></li><li><a href="#about">About</a></li>
-      </ul>
-      <div class="actions">
-        <a class="btn-ghost" href="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4" target="_blank">Login</a>
-        <a class="btn-primary" href="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4" target="_blank">Signup</a>
-      </div>
-    </nav>
 
-    <header id="home" class="hero">
-      <h1>RedBox — Exclusive Gift Card Offers</h1>
-      <p class="lead">Amazon, iTunes, Google Play and more — claim your reward after quick verification.</p>
-      <div class="pill" id="countdown">⏳ Loading…</div>
-    </header>
+<header>
+  <h1>🎁 RedBox</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Offers</a>
+    <a href="#">About</a>
+    <a href="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4">Login</a>
+    <a href="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4">Signup</a>
+  </nav>
+</header>
 
-    <div class="filters">
-      <button class="chip active" onclick="filterCategory('all',this)">All</button>
-      <button class="chip" onclick="filterCategory('amazon',this)">Amazon</button>
-      <button class="chip" onclick="filterCategory('itunes',this)">iTunes</button>
-      <button class="chip" onclick="filterCategory('google',this)">Google Play</button>
-      <button class="chip" onclick="filterCategory('others',this)">Others</button>
-    </div>
+<section class="hero">
+  <h2>Exclusive Gift Card Deals</h2>
+  <p>Claim Amazon, iTunes, Google Play & more after quick verification.</p>
+  <div class="timer">⏳ Limited time — 72h left</div>
+</section>
 
-    <main>
-      <section id="offers" class="grid"></section>
-    </main>
+<section class="cta">
+  <h3>Don’t Miss Out!</h3>
+  <p>Grab your favorite gift card before the timer runs out.</p>
+  <button>Browse Offers</button>
+</section>
 
-    <footer>© 2025 RedBox</footer>
+<div class="filters">
+  <button class="active" onclick="filterCards('all')">All</button>
+  <button onclick="filterCards('Amazon')">Amazon</button>
+  <button onclick="filterCards('iTunes')">iTunes</button>
+  <button onclick="filterCards('Google Play')">Google Play</button>
+  <button onclick="filterCards('Others')">Others</button>
+</div>
+
+<div class="grid" id="cardGrid"></div>
+
+<!-- Modal -->
+<div class="modal" id="verifyModal">
+  <div class="modal-content">
+    <h3>Verification Required</h3>
+    <p>Please complete verification to unlock this gift card.</p>
+    <a href="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4">Proceed</a>
   </div>
+</div>
 
-  <!-- Modal -->
-  <div id="modal" class="modal"><button class="close" onclick="closeModal()">✕</button>
-    <div class="panel">
-      <h3>Verification Required</h3>
-      <p>Please complete verification to unlock this gift card.</p>
-      <a id="modal-proceed" class="btn" href="#" target="_blank">Proceed</a>
-    </div>
-  </div>
+<footer>
+  <p>© 2025 RedBox. All Rights Reserved.</p>
+</footer>
 
-  <script>
-    const PROMO_LINK="https://www.profitableratecpm.com/u39jsux8xu?key=a3db9540df29e59de28ac71705cd5ea4";
-    const categoryNames={amazon:"Amazon",itunes:"iTunes",google:"Google Play",others:"Others"};
-    const IMAGES={
-      amazon:[
-        "https://cdn.pixabay.com/photo/2016/11/29/02/23/amazon-1869067_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/12/28/09/36/amazon-1935731_1280.jpg",
-        "https://cdn.pixabay.com/photo/2017/03/23/16/54/amazon-2168612_1280.jpg",
-        "https://cdn.pixabay.com/photo/2017/04/12/13/27/amazon-2225571_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/12/02/04/12/amazon-1872490_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/11/29/05/08/amazon-1869396_1280.jpg",
-        "https://cdn.pixabay.com/photo/2017/04/12/15/44/amazon-2225651_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/12/17/14/07/amazon-1910379_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/11/18/18/15/gift-card-1836242_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/11/29/02/23/amazon-1869067_1280.jpg"
-      ],
-      itunes:[
-        "https://cdn.pixabay.com/photo/2015/05/26/09/37/itunes-784107_1280.png",
-        "https://cdn.pixabay.com/photo/2016/05/05/02/37/apple-1378700_1280.png",
-        "https://cdn.pixabay.com/photo/2016/02/22/09/12/apple-1213329_1280.png",
-        "https://cdn.pixabay.com/photo/2016/03/27/19/46/apple-1282241_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/24/12/42/apple-1353945_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/18/14/24/apple-1334601_1280.png",
-        "https://cdn.pixabay.com/photo/2016/05/05/02/37/apple-1378700_1280.png",
-        "https://cdn.pixabay.com/photo/2016/02/22/09/12/apple-1213329_1280.png",
-        "https://cdn.pixabay.com/photo/2016/03/27/19/46/apple-1282241_1280.png",
-        "https://cdn.pixabay.com/photo/2015/05/26/09/37/itunes-784107_1280.png"
-      ],
-      google:[
-        "https://cdn.pixabay.com/photo/2015/05/26/09/37/google-784114_1280.png",
-        "https://cdn.pixabay.com/photo/2016/02/22/09/10/google-1213326_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/06/16/40/google-1313375_1280.png",
-        "https://cdn.pixabay.com/photo/2016/02/22/09/08/google-1213319_1280.png",
-        "https://cdn.pixabay.com/photo/2016/03/27/19/43/google-1282237_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/18/14/25/google-1334603_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/24/12/44/google-1353946_1280.png",
-        "https://cdn.pixabay.com/photo/2016/05/05/02/38/google-1378703_1280.png",
-        "https://cdn.pixabay.com/photo/2016/07/21/12/27/google-1534121_1280.png",
-        "https://cdn.pixabay.com/photo/2015/05/26/09/37/google-784114_1280.png"
-      ],
-      others:[
-        "https://cdn.pixabay.com/photo/2015/05/26/09/38/gift-784119_1280.png",
-        "https://cdn.pixabay.com/photo/2016/11/29/03/20/gift-1869184_1280.jpg",
-        "https://cdn.pixabay.com/photo/2017/02/15/10/39/gift-2063556_1280.png",
-        "https://cdn.pixabay.com/photo/2017/01/17/19/05/gift-1984156_1280.png",
-        "https://cdn.pixabay.com/photo/2017/02/10/13/53/gift-2051202_1280.png",
-        "https://cdn.pixabay.com/photo/2016/03/27/19/47/gift-1282242_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/24/12/43/gift-1353947_1280.png",
-        "https://cdn.pixabay.com/photo/2016/04/18/14/24/gift-1334602_1280.png",
-        "https://cdn.pixabay.com/photo/2016/05/05/02/39/gift-1378704_1280.png",
-        "https://cdn.pixabay.com/photo/2016/11/18/18/15/gift-card-1836242_1280.jpg"
-      ]
-    };
-    const grid=document.querySelector('.grid');
-    Object.keys(IMAGES).forEach(cat=>{
-      IMAGES[cat].forEach((img,i)=>{
-        let price=(i+1)*10;
-        let el=document.createElement('article');
-        el.className="card"; el.dataset.category=cat;
-        el.innerHTML=`
-          <div class="badge">${cat==="amazon"?"HOT":cat==="itunes"?"NEW":cat==="google"?"LIMITED":"OFFER"}</div>
-          <div class="media"><img src="${img}" alt="${categoryNames[cat]} Gift Card ${i+1}"></div>
-          <div class="body">
-            <h3>$${price} ${categoryNames[cat]} Gift Card</h3>
-            <div><span class="pill-sm">${categoryNames[cat]}</span> <span class="pill-sm">${price} USD</span></div>
-            <a class="btn" href="#" onclick="openVerification(event,'${PROMO_LINK}')">Unlock Now</a>
-          </div>`;
-        grid.appendChild(el);
+<!-- Adsterra Scripts -->
+<script type='text/javascript' src='//pl24424870.profitableratecpm.com/2c/01/dd/2c01dda186b6046b6c1498f0faef5709.js'></script>
+<script type='text/javascript' src='//pl24424911.profitableratecpm.com/9b/02/99/9b02994cac252af35b236bac21ec1e74.js'></script>
+
+<script>
+  const IMAGES = {
+    Amazon: [
+      "https://i.imgur.com/3g7nmJC.jpg",
+      "https://i.imgur.com/2Ak5D2B.jpg",
+      "https://i.imgur.com/B1qVrd1.jpg",
+      "https://i.imgur.com/OVwG4cO.jpg",
+      "https://i.imgur.com/JpLx7cL.jpg",
+      "https://i.imgur.com/XK3m8kN.jpg",
+      "https://i.imgur.com/mX4N8Mq.jpg",
+      "https://i.imgur.com/vJjPoVy.jpg",
+      "https://i.imgur.com/8H2a7o7.jpg",
+      "https://i.imgur.com/0kzSDeZ.jpg"
+    ],
+    iTunes: [
+      "https://i.imgur.com/y8fN2Wm.jpg",
+      "https://i.imgur.com/0kDtr1V.jpg",
+      "https://i.imgur.com/4n9q6Zd.jpg",
+      "https://i.imgur.com/8zsnGJm.jpg",
+      "https://i.imgur.com/YV7jLcu.jpg",
+      "https://i.imgur.com/ghV6U3S.jpg",
+      "https://i.imgur.com/L7kqf2c.jpg",
+      "https://i.imgur.com/F6Y7sFj.jpg",
+      "https://i.imgur.com/fXH5mG9.jpg",
+      "https://i.imgur.com/cRE0ZwV.jpg"
+    ],
+    "Google Play": [
+      "https://i.imgur.com/XbZKzOZ.jpg",
+      "https://i.imgur.com/R85NdwF.jpg",
+      "https://i.imgur.com/zrTSjLQ.jpg",
+      "https://i.imgur.com/3EknqzD.jpg",
+      "https://i.imgur.com/0Y4NskT.jpg",
+      "https://i.imgur.com/niCkqDu.jpg",
+      "https://i.imgur.com/ccwDwwL.jpg",
+      "https://i.imgur.com/lGd9Y5u.jpg",
+      "https://i.imgur.com/otJgOlm.jpg",
+      "https://i.imgur.com/k8yo6oz.jpg"
+    ],
+    Others: [
+      "https://i.imgur.com/ETpUj0g.jpg",
+      "https://i.imgur.com/wSBXnpl.jpg",
+      "https://i.imgur.com/BtD9XqQ.jpg",
+      "https://i.imgur.com/ENixP0j.jpg",
+      "https://i.imgur.com/koCGrMl.jpg",
+      "https://i.imgur.com/V21cvGJ.jpg",
+      "https://i.imgur.com/2CrD7Sz.jpg",
+      "https://i.imgur.com/a8RL3t7.jpg",
+      "https://i.imgur.com/7mfl1Pu.jpg",
+      "https://i.imgur.com/9FjFvC2.jpg"
+    ]
+  };
+
+  function generateCards() {
+    const grid = document.getElementById("cardGrid");
+    grid.innerHTML = "";
+    for (let cat in IMAGES) {
+      IMAGES[cat].forEach((img, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.setAttribute("data-category", cat);
+        card.innerHTML = `
+          <img src="${img}" alt="${cat} Gift Card ${index+1}">
+          <h3>$${(index+1)*10} ${cat} Gift Card</h3>
+          <p>${cat} ${(index+1)*10} USD</p>
+          <button onclick="openModal()">Unlock Now</button>
+        `;
+        grid.appendChild(card);
       });
-    });
-    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})});
-    document.querySelectorAll('.card').forEach(c=>io.observe(c));
-    function filterCategory(cat,btn){document.querySelectorAll('.card').forEach(card=>{card.style.display=(cat==='all'||card.dataset.category===cat)?'':'none'});document.querySelectorAll('.chip').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
-    filterCategory('all',document.querySelector('.chip.active'));
-    const modal=document.getElementById('modal');const proceed=document.getElementById('modal-proceed');
-    function openVerification(e,link){e.preventDefault();proceed.href=link;modal.style.display='flex';}
-    function closeModal(){modal.style.display='none';}
-    const END=Date.now()+72*60*60*1000;const countdownEl=document.getElementById('countdown');
-    setInterval(()=>{let d=END-Date.now();let h=Math.floor(d/3600000);let m=Math.floor((d%3600000)/60000);let s=Math.floor((d%60000)/1000);countdownEl.textContent=`⏳ ${h}h ${m}m ${s}s left`;},1000);
-  </script>
+    }
+  }
 
-  <!-- Adsterra Popunder + Social Bar -->
-  <script type='text/javascript' src='//pl24424870.profitableratecpm.com/2c/01/dd/2c01dda186b6046b6c1498f0faef5709.js'></script>
-  <script type='text/javascript' src='//pl24424911.profitableratecpm.com/9b/02/99/9b02994cac252af35b236bac21ec1e74.js'></script>
+  function filterCards(category) {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      if (category === "all" || card.dataset.category === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+    document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+  }
+
+  function openModal() {
+    document.getElementById("verifyModal").style.display = "flex";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("verifyModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  generateCards();
+</script>
+
 </body>
 </html>
